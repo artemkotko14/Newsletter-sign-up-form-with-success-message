@@ -103,7 +103,7 @@ main {
 }
 
 .successMessage {
-  visibility: hidden;
+  display: none;
 }
 
 .invalid-feedback {
@@ -192,7 +192,7 @@ main {
     font-size: 3.5rem;
   }
   .signUpForm__content form {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0 3rem;
   }
   .invalid-feedback {
     top: 2.2rem;
@@ -201,10 +201,18 @@ main {
   .successMessage {
     border-radius: 30px;
     max-width: 31rem;
-    padding: 3rem 4rem 4rem;
+    padding: 3rem;
+    padding-bottom: 4rem;
   }
   .successMessage h1 {
     font-size: 3.5rem;
+  }
+  .successMessage p {
+    padding-bottom: 1.5rem;
+  }
+  .successMessage img {
+    transform: scale(1);
+    padding-bottom: 1.5rem;
   }
 }
 @media (min-width: 50rem) and (min-width: 54rem) {

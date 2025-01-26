@@ -28,7 +28,7 @@ const successMessage = document.querySelector('.successMessage');
       } else {
         // Show success message
         event.preventDefault()
-        successMessage.style.visibility = 'visible';
+        successMessage.style.display = 'block';
         signUpForm.style.display = 'none';
         const subscribedEmail = emailInput.value;
         document.getElementById('subscribedEmail').innerHTML = subscribedEmail;
@@ -41,7 +41,7 @@ const successMessage = document.querySelector('.successMessage');
 
 function onButtonClick() {
   signUpForm.style.display = 'flex';
-  successMessage.style.visibility = 'hidden';
+  successMessage.style.display = 'none';
   emailInput.value="";
  // Reset form validation state
   const forms = document.querySelectorAll('.validated-form');

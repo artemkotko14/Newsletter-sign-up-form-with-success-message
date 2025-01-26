@@ -26,7 +26,6 @@ transition: box-shadow 0.3s ease; /* Smooth shadow transition */
 }
 
 
-
 body {
 font-family: $Roboto;
 font-size: 16px;
@@ -71,7 +70,6 @@ padding-bottom: 1.5rem;
   content: url("../assets/images/icon-list.svg");
   position: absolute; 
   left: 0; 
-
 }
 
 & form {
@@ -108,11 +106,9 @@ border-color: black;
 @include button-hover();
 }
 
-
-
 }
 .successMessage{
-visibility: hidden;
+display: none;
 }
 
 // Error state
@@ -149,7 +145,7 @@ padding-bottom: 5.5rem;
 }
 & img {
 padding-bottom: 2rem;
- transform: scale(0.8); /* Scale down to 80% of its original size */
+transform: scale(0.8); /* Scale down to 80% of its original size */
 }
 & button{
 @include dark-button();
@@ -176,15 +172,15 @@ border-radius: 30px;
 
 }
 .signUpForm__picture {
-  display: inline-block;
-  width: auto;
+display: inline-block;
+width: auto;
 height: 100%;
 margin-left: 2rem;
   }
 .signUpForm__picture img {
-    width: auto;
-    max-width: 100%;
-    display: block;
+  width: auto;
+  max-width: 100%;
+  display: block;
   }
 .signUpForm__content{
 padding: 3rem;
@@ -194,7 +190,7 @@ max-width: 30rem;
 font-size: 3.5rem;
 }
 & form {
-padding: 2.5rem 0;
+padding: 1.5rem 0 3rem;
 }
 }
 .invalid-feedback{
@@ -204,9 +200,17 @@ right: -12rem;
 .successMessage{
 border-radius: 30px;
 max-width: 31rem;
-padding: 3rem 4rem 4rem;
+padding: 3rem;
+padding-bottom: 4rem;
 & h1{
 font-size: 3.5rem;
+}
+& p{
+padding-bottom: 1.5rem;
+}
+& img {
+ transform: scale(1); 
+padding-bottom: 1.5rem;
 }
 
 
