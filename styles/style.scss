@@ -5,121 +5,114 @@
   justify-content: center;
   align-items: center;
 }
-@mixin dark-button{
-background-color: $dark-slate-gray;
-text-align: center;
-color: $white;
-width: 100%;
-padding: 1rem 0;
-border: 1px solid $dark-slate-gray;
-border-radius: 7px;
-font-weight: 500;
+@mixin dark-button {
+  background-color: $dark-slate-gray;
+  text-align: center;
+  color: $white;
+  width: 100%;
+  padding: 1rem 0;
+  border: 1px solid $dark-slate-gray;
+  border-radius: 7px;
+  font-weight: 500;
 }
-@mixin button-hover{
-background-image: linear-gradient(to right, #ff537b , #f64417);
-color: $white;
-cursor: pointer;
-border:none;
-outline: none; /* Removes default focus outline */
-box-shadow: 0 15px 20px rgb(255, 198, 207); /* Adds shadow */
-transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+@mixin button-hover {
+  background-image: linear-gradient(to right, #ff537b, #f64417);
+  color: $white;
+  cursor: pointer;
+  border: none;
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 15px 20px rgb(255, 198, 207); /* Adds shadow */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
 }
-
 
 body {
-font-family: $Roboto;
-font-size: 16px;
+  font-family: $Roboto;
+  font-size: 16px;
 }
-main{
-background-color: $charcoal-gray;
-margin: 0;
-padding: 0;
-min-height: 100svh;
-@include flex-center(column);
- 
-}
-.signUpForm{
-@include flex-center(column);
-background-color: $white;
-max-width: 23.4rem;
-}
-.signUpForm__picture{
-width: 100%;
-}
-.signUpForm__content{
-padding: 1.5rem;
-font-size: $fw-regular;
-color: $dark-slate-gray;
-& h1 {
-padding-bottom: 1rem;
-font-weight: $fw-bold;
-}
-& p {
-padding-bottom: 1.5rem;
-}
-& ul {
+main {
+  background-color: $charcoal-gray;
+  margin: 0;
+  padding: 0;
+  min-height: 100svh;
   @include flex-center(column);
-  align-items: flex-start;
-  position: relative; /* Allows positioning for custom bullet */
-  padding-left: 2.3rem;
-  list-style: none; /* Hides the default bullet points */
-  gap: 0.5rem;
+}
+.signUpForm {
+  @include flex-center(column);
+  background-color: $white;
+  max-width: 23.4rem;
+}
+.signUpForm__picture {
+  width: 100%;
+}
+.signUpForm__content {
+  padding: 1.5rem;
+  font-size: $fw-regular;
+  color: $dark-slate-gray;
+  & h1 {
+    padding-bottom: 1rem;
+    font-weight: $fw-bold;
+  }
+  & p {
+    padding-bottom: 1.5rem;
+  }
+  & ul {
+    @include flex-center(column);
+    align-items: flex-start;
+    position: relative; /* Allows positioning for custom bullet */
+    padding-left: 2.3rem;
+    list-style: none; /* Hides the default bullet points */
+    gap: 0.5rem;
+  }
+  & li::before {
+    content: url("../assets/images/icon-list.svg");
+    position: absolute;
+    left: 0;
+  }
 
-}
-& li::before{
-  content: url("../assets/images/icon-list.svg");
-  position: absolute; 
-  left: 0; 
-}
+  & form {
+    padding: 2rem 0;
+    @include flex-center(column);
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .form-check-label {
+    font-weight: $fw-bold;
+    font-size: 0.8rem;
+  }
+  .form-control {
+    padding: 1rem 1.4rem;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid $gray;
+    opacity: 75%;
+  }
+  .subscribeButton {
+    @include dark-button();
+    margin-top: 1rem;
+  }
 
-& form {
-padding: 2rem 0;
- @include flex-center(column);
-justify-content: flex-start;
-align-items: flex-start;
-gap: 0.5rem
+  .form-control:hover {
+    cursor: pointer;
+    border-color: black;
+  }
+  .subscribeButton:hover,
+  .subscribeButton:focus {
+    @include button-hover();
+  }
 }
-.form-check-label{
-font-weight: $fw-bold;
-font-size: 0.8rem;
-
-}
-.form-control{
-padding: 1rem 1.4rem;
-width: 100%;
-border-radius: 7px;
-border: 1px solid $gray; 
-opacity: 75%;
-
-}
-.subscribeButton{
-@include dark-button();
-margin-top: 1rem;
-}
-
-.form-control:hover {
-cursor: pointer;
-border-color: black;
-} 
-.subscribeButton:hover,
-.subscribeButton:focus  {
-@include button-hover();
-}
-
-}
-.successMessage{
-display: none;
+.successMessage {
+  display: none;
 }
 
 // Error state
-.invalid-feedback{
-font-weight: $fw-bold;
-position: absolute; /* Position the feedback message */
-top: 1.7rem; /* Move it above the input */
-right: -12rem;/* Align it to the right */
-font-size: 0.8rem; 
-display: none; /* Hide by default; Bootstrap will toggle visibility */
-
+.invalid-feedback {
+  font-weight: $fw-bold;
+  position: absolute; /* Position the feedback message */
+  top: 1.7rem; /* Move it above the input */
+  right: -12rem; /* Align it to the right */
+  font-size: 0.8rem;
+  display: none; /* Hide by default; Bootstrap will toggle visibility */
 }
 .validated-form {
   position: relative; /* Ensure the form acts as a positioning context */
@@ -127,109 +120,98 @@ display: none; /* Hide by default; Bootstrap will toggle visibility */
 
 // Success Message
 
-.successMessage{
-background-color: $white;
-max-width: 23.4rem;
-font-size: $fw-regular;
-color: $dark-slate-gray;
-padding: 5rem 1rem;
+.successMessage {
+  background-color: $white;
+  max-width: 23.4rem;
+  font-size: $fw-regular;
+  color: $dark-slate-gray;
+  padding: 5rem 1rem;
 
-& h1{
-font-weight: $fw-bold;
-padding-bottom: 1rem;
-font-size: 2rem;
-line-height: 1;
+  & h1 {
+    font-weight: $fw-bold;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 1;
+  }
+  & p {
+    padding-bottom: 5.5rem;
+  }
+  & img {
+    padding-bottom: 2rem;
+    transform: scale(0.8); /* Scale down to 80% of its original size */
+  }
+  & button {
+    @include dark-button();
+  }
+  & button:hover,
+  button:focus {
+    @include button-hover();
+  }
 }
-& p{
-padding-bottom: 5.5rem;
-}
-& img {
-padding-bottom: 2rem;
-transform: scale(0.8); /* Scale down to 80% of its original size */
-}
-& button{
-@include dark-button();
-}
-& button:hover,
-button:focus  {
-@include button-hover();
-}
-}
-
-
 
 // Desktop design
 
-@media (min-width: 50rem){
-
-.signUpForm{
-@include flex-center(row-reverse);
-justify-content: flex-start;
-align-items: flex-start;
-max-width: 76rem;
-padding: 1.5rem;
-border-radius: 30px;
-
-}
-.signUpForm__picture {
-display: inline-block;
-width: auto;
-height: 100%;
-margin-left: 2rem;
+@media (min-width: 50rem) {
+  .signUpForm {
+    @include flex-center(row-reverse);
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 76rem;
+    padding: 1.5rem;
+    border-radius: 30px;
   }
-.signUpForm__picture img {
-  width: auto;
-  max-width: 100%;
-  display: block;
+  .signUpForm__picture {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-left: 2rem;
   }
-.signUpForm__content{
-padding: 3rem;
-padding-bottom: 0;
-max-width: 30rem;
-& h1{
-font-size: 3.5rem;
-}
-& form {
-padding: 1.5rem 0 3rem;
-}
-}
-.invalid-feedback{
-top: 1.6rem; 
-right: -12rem;
-}
-.successMessage{
-border-radius: 30px;
-max-width: 31rem;
-padding: 3rem;
-padding-bottom: 4rem;
-& h1{
-font-size: 3.5rem;
-}
-& p{
-padding-bottom: 1.5rem;
-}
-& img {
- transform: scale(1); 
-padding-bottom: 1.5rem;
-}
+  .signUpForm__picture img {
+    width: auto;
+    max-width: 100%;
+    display: block;
+  }
+  .signUpForm__content {
+    padding: 3rem;
+    padding-bottom: 0;
+    max-width: 30rem;
+    & h1 {
+      font-size: 3.5rem;
+    }
+    & form {
+      padding: 1.5rem 0 3rem;
+    }
+  }
+  .invalid-feedback {
+    top: 1.6rem;
+    right: -6.5rem;
+  }
+  .successMessage {
+    border-radius: 30px;
+    max-width: 31rem;
+    padding: 3rem;
+    padding-bottom: 4rem;
+    & h1 {
+      font-size: 3.5rem;
+    }
+    & p {
+      padding-bottom: 1.5rem;
+    }
+    & img {
+      transform: scale(1);
+      padding-bottom: 1.5rem;
+    }
+  }
 
-
-}
-
-// For styling porposes only
-@media (min-width: 54rem) {
-.invalid-feedback{
-right: -13.2rem;
-}
-}
-@media (min-width: 58rem) {
-.invalid-feedback{
-right: -14.4rem;
-}
-}
-@media (min-width: 62.5rem) {
-.invalid-feedback{
-right: -15.8rem;
-}
-}
+  // For styling porposes only
+  @media (min-width: 58rem) {
+    .invalid-feedback {
+      right: -7rem;
+    }
+  }
+  @media (min-width: 62.5rem) {
+    .invalid-feedback {
+      right: -7.5rem;
+    }
+  }
 }

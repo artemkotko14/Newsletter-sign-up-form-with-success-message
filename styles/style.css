@@ -174,7 +174,7 @@ main {
   }
   .signUpForm__picture {
     display: inline-block;
-    width: auto;
+    width: 100%;
     height: 100%;
     margin-left: 2rem;
   }
@@ -196,7 +196,7 @@ main {
   }
   .invalid-feedback {
     top: 1.6rem;
-    right: -12rem;
+    right: -6.5rem;
   }
   .successMessage {
     border-radius: 30px;
@@ -215,18 +215,13 @@ main {
     padding-bottom: 1.5rem;
   }
 }
-@media (min-width: 50rem) and (min-width: 54rem) {
-  .invalid-feedback {
-    right: -13.2rem;
-  }
-}
 @media (min-width: 50rem) and (min-width: 58rem) {
   .invalid-feedback {
-    right: -14.4rem;
+    right: -7rem;
   }
 }
 @media (min-width: 50rem) and (min-width: 62.5rem) {
   .invalid-feedback {
-    right: -15.8rem;
+    right: -7.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
